@@ -1,0 +1,97 @@
+1.安装外壳，记得撕掉外壳上面的保护膜，不然就不是很透明
+
+2.下载arch arm包 http://archlinuxarm.org
+安装方法 ：http://archlinuxarm.org/platforms/armv6/raspberry-pi
+  一开始始终安装不上  报的错是invalid block ，后面发现是arch还不支持vfat（win下是fat32）  
+  因此安装dosfstools让其支持vfat文件系统
+      参考：https://wiki.archlinux.org/index.php/File_Systems
+	    http://www.daniel-baumann.ch/software/dosfstools/
+3.修改config.txt，让其支持屏幕显示
+  参考wiki：http://elinux.org/RPiconfig#Video_mode_options
+  http://blog.csdn.net/xukai871105/article/details/9003612
+  
+  
+ config.txt
+# uncomment if you get no picture on HDMI for a default "safe" mode
+#hdmi_safe=1
+
+# uncomment this if your display has a black border of unused pixels visible
+# and your display can output without overscan
+disable_overscan=1
+
+# uncomment the following to adjust overscan. Use positive numbers if console
+# goes off screen, and negative if there is too much border
+#overscan_left=16
+#overscan_right=16
+#overscan_top=16
+#overscan_bottom=16
+
+# uncomment to force a console size. By default it will be display's size minus
+# overscan.
+framebuffer_width=1280
+framebuffer_height=1024
+#hdmi_ignore_edid=0xa5000080
+
+# uncomment if hdmi display is not detected and composite is being output
+hdmi_force_hotplug=1
+
+# uncomment to force a specific HDMI mode (this will force VGA)
+#hdmi_group=1
+
+# uncomment to force a HDMI mode rather than DVI. This can make audio work in
+# DMT (computer monitor) modes
+hdmi_group=2
+hdmi_mode=35
+hdmi_ignore_edid=0xa5000080
+
+# uncomment to increase signal to HDMI, if you have interference, blanking, or
+# no display
+config_hdmi_boost=4
+
+# uncomment for composite PAL
+sdtv_mode=0
+
+#uncomment to overclock the arm. 700 MHz is the default.
+#arm_freq=800
+
+# for more options see http://elinux.org/RPi_config.txt
+
+## Some over clocking settings, governor already set to ondemand
+
+##None
+#arm_freq=700
+#core_freq=250
+#sdram_freq=400
+#over_voltage=0
+
+##Modest
+#arm_freq=800
+#core_freq=300
+#sdram_freq=400
+#over_voltage=0
+
+##Medium
+#arm_freq=900
+#core_freq=333
+#sdram_freq=450
+#over_voltage=2
+
+##High
+#arm_freq=950
+#core_freq=450
+#sdram_freq=450
+#over_voltage=6
+
+##Turbo
+#arm_freq=1000
+#core_freq=500
+#sdram_freq=500
+#over_voltage=6
+
+gpu_mem_512=64
+gpu_mem_256=64
+
+
+
+默认用户名是：root
+默认密码是：root

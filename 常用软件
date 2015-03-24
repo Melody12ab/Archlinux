@@ -1,0 +1,61 @@
+
+
+今天基本上固定了常用的软件，列一下，装了个，也供大家参考
+本人用Xfce，其默认软件不再过多讨论，网上有目录
+
+浏览器：chromium, midori(主要是chrome的话，root不能用。。。。)
+下载：wget（专供AUR用），Deluge（下载ipv6的BT）
+即时通讯：openfetion（不解释），pidgin（极少用），xchat（今天刚刚开始上irc），skype（视频专用）
+文件传输：filezilla(好用，不解释)，iptux（飞鸽传书，o(∩∩)o...哈哈）
+RSS：liferea（略略卡，尤其是更新的时候）
+文档阅读编辑：libreoffice（不是特别好用，坐等wps），zathura（pdf极好用，但是要适应才行），chmsee
+编辑器：medit（很好用的说，有kate的风范），geany（本菜鸟手中的“神器” :em04  :em04 ），vim（公认的神器吧），eclipse（做android程序用）
+图形类：ristretto（默认的，好用啊），gimp（不解释），dia（流程图专用）
+科学小软件：stellarium（夜空软件，天文爱好者你伤不起啊），musescroe（写五线谱的，鄙人爱好比较广泛 :em09  :em09 ），galculator（小计算器），octave（强大的数学工具，不解释）
+播放器：exaile（推荐），parole（好用！！），flashplayer（不解释）
+系统网络工具：bleachbit（清理系统垃圾），gparted（分区神器不解释），wireshark（网络分析，“坏人”们都懂的 :em04  :em04 ）
+游戏：gens，fceux，（两大知名模拟器，爱玩不解释），qsanguosha（ :em06  :em06 ），flightgear（刚开始玩儿，各种坠机 :em06  :em06 ）
+ 
+ 
+ 
+stellarium 我也装了，还有 celestia。计算器推荐 qalculator，强大到不需要解释。
+窗口管理器：awesome
+网页浏览器：火狐。偶尔+Chrome；文本：w3m，elink2
+邮件客户端：mutt+getmail+procmail+msmtp
+文本编辑器：Vim、GVim
+终端模拟器：Xfce Terminal
+终端复用器：tmux
+命令解释器：zsh
+文档阅读器：evince-nodbus
+聊天客户端：pidgin, weechat
+中文输入法：fcitx
+主脚本语言：Python
+媒体播放器：mpv, mplayer, vlc
+矢量图处理：Inkscape
+位图处理：GIMP, shutter, ImageMagick
+截图工具：scrot, shutter, PicPick, GIMP, ImageMagick
+远程登录：ssh, mosh
+HTTP下载与调试：wget, curl, aria2c, Firebug, HttpFox
+数学工具：sage
+网络调试：wireshark，服务器上 tcpdump
+其它网络工具：socat, iptables, nmap
+内核：linux-lily
+
+
+内核：Linux-ck
+桌面环境：KDE
+网页浏览器：Chrome（主要用于刷姬家及调试前端页面）/ Firefox（日常浏览+调试页面） / w3m（CLI）
+邮件客户端：Thunderbird
+文本编辑器：Vim/Emacs/Kate
+终端模拟器：Konsole/Yakuake
+Shell： Zsh
+文档阅读器：Okular
+中文输入法：fcitx
+聊天客户端：Pidgin
+媒体播放器：Mplayer/Smplayer/Clementine
+图形处理：GIMP
+集成开发环境：WebStorm/RubyMine
+各种工具：wireshark/tfn2k/netcat/ettercap/nmap, etc...
+
+musescore
+游戏：wesnoth，steam（英雄萨姆哇咔咔），scummvm（猴岛断剑哇咔咔），gemrb（博德之门哇咔咔），qsanguosha
