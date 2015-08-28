@@ -2,3 +2,5 @@
     在.xprofile中添加export LANG=zh_CN.UTF-8
 2.yakuake开机自启动的问题
     ln -s /usr/bin/yakuake ~/.kde4/Autostart/
+3.错误：GPGME error: 无数据
+	删除 /var/lib/pacman/sync 里的全部文件，再执行 pacman -Syu 更新
