@@ -1,0 +1,60 @@
+网络设置1.nm连接：
+Command line
+nmcli
+The networkmanager package contains nmcli since version 0.8.1.
+Examples:
+To connect to a wifi network:
+  nmcli dev wifi connect <name> password <password>
+To connect to a wifi on the wlan1 wifi interface:
+  nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]
+To disconnect an interface:
+  nmcli dev disconnect iface eth0
+To reconnect an interface marked as disconnected:
+  nmcli con up uuid <uuid>
+To get a list of UUIDs:
+  nmcli con show
+To see a list of network devices and their state:
+  nmcli dev
+  nmtui
+nmtui is a graphic frontend for networkmanager using curses. It is useful for configuring and managing networks without X. The networkmanager package contains nmtui since version 0.9.10.
+  nmcli-dmenu
+Alternatively there is networkmanager-dmenu-git which is a small script to manage NetworkManager connections with dmenu instead of nm-applet. It provides all essential features such as connect 
+to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking,
+launch nm-connection-editor GUI. 
+  https://wiki.archlinux.org/index.php/NetworkManager#Command_line
+  
+网络设置2：
+https://wiki.archlinux.org/index.php/Wicd
+  
+archlinux中国源和密钥导入  
+Arch Linux Chinese Community Repository
+Usage
+
+Add repo
+
+[archlinuxcn]
+SigLevel = Optional TrustAll
+Server = http://repo.archlinuxcn.org/$arch
+to your /etc/pacman.conf .
+
+For mirrors (mainly in China), see https://github.com/archlinuxcn/mirrorlist-repo.
+
+Add PGP Keys
+
+sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring  
+
+yaourt 安装时遇到md5检验失败
+ 如果想省事，直接
+yaourt -S 软件包 --noconfirm
+就好了。
+不过安装某些包时有极大几率需要修改PKGBUILD的
+一般是md5值错误，source链接失效，或者是依赖有改动之类的
+
+man命令显示颜色
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
