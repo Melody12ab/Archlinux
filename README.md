@@ -1,2 +1,4 @@
 # Archlinux
-Archlinux config
+- arrange 待整理
+- dotfile 配置文件
+
