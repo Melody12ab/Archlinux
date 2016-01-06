@@ -1,4 +1,4 @@
-
+ZSH_THEME="agnoster"
 autoload colors
 colors
  
@@ -251,8 +251,12 @@ alias gco='git checkout '
 alias gb='git branch '
 alias gl='git log '
 alias grv='git remote -v'
-alias vim='sudo vim'
-
+alias svim='sudo vim'
+alias gbva='git branch -va'
+alias gpo='git push origin '
+alias grad='git remote add '
+alias gcm='git commit -m '
+alias gpom='git push origin master '
  
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
@@ -353,9 +357,46 @@ export JAVA_HOME=/usr/env/jdk8
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export MAVEN_HOME=/usr/env/maven3
-export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:$PATH
+export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:$PATH:/usr/env/scala/bin
+
+
+alias mci='mvn clean install '
+#transfor python code to pep8 style
+alias python2pep8='autopep8 --in-place --aggressive --aggressive '
+alias ping3='ping -c 3 '
+alias par=' sudo pacman -R '
+alias prscn='sudo pacman -Rscn '
+alias pqdt='sudo pacman -Qdt '
+alias sshlx='ssh lijl@10.99.23.88'
+alias docker='sudo docker '
+alias ..='cd .. '
+#sina-rb
+#alias mysql4rb='mysql -u dashboard -h 172.16.190.141 -P 3308 -p '
+#haiwan-ps   yangjing511
+#alias mysql4hw='mysql -u yangjing -h 172.16.0.33 -P 3306 -p '
+alias psyu='sudo pacman -Syu '
+alias mci='mvn clean install '
+alias mysql4lx=' mysql -u tools -h 10.99.23.88 -P 3306 -p '
+
+alias jenkins=' nohup ./start_jenkins.sh >jenkins.log 2>&1 & '
 
 
 
-alias nvidiatest='optirun glxspheres64 '  
-alias nvidiaset='optirun -b none nvidia-settings -c :8'
+#terminal touming
+if [ -n "$WINDOWID" ]; then
+    TRANSPARENCY_HEX=$(printf 0x%x $((0xffffffff * 95 / 100)))
+    xprop -id "$WINDOWID" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY "$TRANSPARENCY_HEX"
+fi
+
+#color manpages
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
