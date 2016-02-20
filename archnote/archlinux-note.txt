@@ -6,6 +6,4 @@
 	删除 /var/lib/pacman/sync 里的全部文件，再执行 pacman -Syu 更新
 4.在gnome-terminal中无法输入中文字体
     查fcitx的wiki可得知：
-<pre>
-$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
-</pre>
+    $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
