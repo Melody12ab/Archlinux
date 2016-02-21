@@ -7,3 +7,5 @@
 4.在gnome-terminal中无法输入中文字体
     查fcitx的wiki可得知：
     $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
+5.升级时候PGP出现问题
+    直接去下载后对应目录下pacman -U 安装  或者  删除/var/lib/pacman/sync目录下的文件然后pacman -Syu
