@@ -26,9 +26,11 @@ esac
  
 #编辑器
 export EDITOR=vim
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERES="@im=fcitx"
+#输入法
+export XMODIFIERS="@im=ibus"
+export QT_MODULE=ibus
+export GTK_MODULE=ibus
+#关于历史纪录的配置 {{{
 #历史纪录条目数量
 export HISTSIZE=10000
 #注销后保存的历史纪录条目数量
@@ -102,6 +104,12 @@ setopt complete_in_word
 #禁用 core dumps
 limit coredumpsize 0
  
+#Emacs风格 键绑定
+bindkey -e
+#bindkey -v
+#设置 [DEL]键 为向后删除
+#bindkey "\e[3~" delete-char
+ 
 #以下字符视为单词的一部分
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 #}}}
@@ -114,6 +122,11 @@ setopt AUTO_MENU
  
 autoload -U compinit
 compinit
+ 
+#自动补全缓存
+#zstyle ':completion::complete:*' use-cache on
+#zstyle ':completion::complete:*' cache-path .zcache
+#zstyle ':completion:*:cd:*' ignore-parents parent pwd
  
 #自动补全选项
 zstyle ':completion:*' verbose yes
@@ -208,6 +221,8 @@ sudo-command-line() {
 zle end-of-line                 #光标移动到行末
 }
 zle -N sudo-command-line
+#定义快捷键为： [Esc] [Esc]
+bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
@@ -242,9 +257,7 @@ alias gpo='git push origin '
 alias grad='git remote add '
 alias gcm='git commit -m '
 alias gpom='git push origin master '
-alias gpod='git push origin develop '
-alias pq='pacman -Q'
-alias gaa='git add .' 
+ 
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
 autoload run-help
@@ -261,12 +274,22 @@ hash -d E="/etc/"
 hash -d D="/home/ayumi/Documents"
 #}}}
  
+##for Emacs {{{
+#在 Emacs终端 中使用 Zsh 的一些设置 不推荐在 Emacs 中使用它
+#if [[ "$TERM" == "dumb" ]]; then
+#setopt No_zle
+#PROMPT='%n@%M %/
+#>>'
+#alias ls='ls -F'
+#fi
+#}}}
+ 
 #{{{自定义补全
 #补全 ping
 zstyle ':completion:*:ping:*' hosts 192.168.1.{1,50,51,100,101} www.google.com
  
 #补全 ssh scp sftp 等
-zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+#zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 #}}}
  
 #{{{ F1 计算器
@@ -287,6 +310,9 @@ zmodload zsh/mathfunc
 autoload -U zsh-mime-setup
 zsh-mime-setup
 setopt EXTENDED_GLOB
+#autoload -U promptinit
+#promptinit
+#prompt redhat
  
 setopt correctall
 autoload compinstall
@@ -342,7 +368,6 @@ alias par=' sudo pacman -R '
 alias prscn='sudo pacman -Rscn '
 alias pqdt='sudo pacman -Qdt '
 alias sshlx='ssh lijl@10.99.23.88'
-alias sshxx='ssh mathweb@202.197.237.29'
 alias docker='sudo docker '
 alias ..='cd .. '
 #sina-rb
@@ -352,7 +377,6 @@ alias ..='cd .. '
 alias psyu='sudo pacman -Syu '
 alias mci='mvn clean install '
 alias mysql4lx=' mysql -u tools -h 10.99.23.88 -P 3306 -p '
-alias wsearch='curl -4 wttr.in/haidian'
 
 alias jenkins=' nohup ./start_jenkins.sh >jenkins.log 2>&1 & '
 
