@@ -26,14 +26,9 @@ esac
  
 #编辑器
 export EDITOR=vim
-#输入法
-#export XMODIFIERS="@im=ibus"
-#export QT_MODULE=ibus
-#export GTK_MODULE=ibus
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERES="@im=fcitx"
-#关于历史纪录的配置 {{{
 #历史纪录条目数量
 export HISTSIZE=10000
 #注销后保存的历史纪录条目数量
@@ -107,12 +102,6 @@ setopt complete_in_word
 #禁用 core dumps
 limit coredumpsize 0
  
-#Emacs风格 键绑定
-#bindkey -e
-#bindkey -v
-#设置 [DEL]键 为向后删除
-#bindkey "\e[3~" delete-char
- 
 #以下字符视为单词的一部分
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 #}}}
@@ -125,11 +114,6 @@ setopt AUTO_MENU
  
 autoload -U compinit
 compinit
- 
-#自动补全缓存
-#zstyle ':completion::complete:*' use-cache on
-#zstyle ':completion::complete:*' cache-path .zcache
-#zstyle ':completion:*:cd:*' ignore-parents parent pwd
  
 #自动补全选项
 zstyle ':completion:*' verbose yes
@@ -224,8 +208,6 @@ sudo-command-line() {
 zle end-of-line                 #光标移动到行末
 }
 zle -N sudo-command-line
-#定义快捷键为： [Esc] [Esc]
-bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
@@ -273,20 +255,10 @@ alias top10='print -l  ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
  
 #路径别名 {{{
 #进入相应的路径时只要 cd ~xxx
-hash -d T="/home/xiaobai/tmp"
-hash -d H="/home/xiaobai/lenovo/Pform/src/main/webapp/html"
+hash -d A="/media/ayu/dearest"
+hash -d H="/media/data/backup/ayu"
 hash -d E="/etc/"
-hash -d D="/home/xiaobai/Downloads"
-#}}}
- 
-##for Emacs {{{
-#在 Emacs终端 中使用 Zsh 的一些设置 不推荐在 Emacs 中使用它
-#if [[ "$TERM" == "dumb" ]]; then
-#setopt No_zle
-#PROMPT='%n@%M %/
-#>>'
-#alias ls='ls -F'
-#fi
+hash -d D="/home/ayumi/Documents"
 #}}}
  
 #{{{自定义补全
@@ -315,9 +287,6 @@ zmodload zsh/mathfunc
 autoload -U zsh-mime-setup
 zsh-mime-setup
 setopt EXTENDED_GLOB
-#autoload -U promptinit
-#promptinit
-#prompt redhat
  
 setopt correctall
 autoload compinstall
