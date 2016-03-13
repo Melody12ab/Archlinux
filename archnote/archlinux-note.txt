@@ -9,3 +9,5 @@
     $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
 5.升级时候PGP出现问题
     直接去下载后对应目录下pacman -U 安装  或者  删除/var/lib/pacman/sync目录下的文件然后pacman -Syu
+6.vim _vim_files:function defination file not found
+    删除~/.zcompdump 然后执行exec zsh
