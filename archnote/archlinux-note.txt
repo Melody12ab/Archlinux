@@ -9,5 +9,12 @@
     $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
 5.升级时候PGP出现问题
     直接去下载后对应目录下pacman -U 安装  或者  删除/var/lib/pacman/sync目录下的文件然后pacman -Syu
+    或者是pacman.conf中的optional值有问题
 6.vim _vim_files:function defination file not found
     删除~/.zcompdump 然后执行exec zsh
+7.加上硬盘挂载上去开机自启
+    sudo blkid /dev/sda5   #查看UUID
+    编辑 /etc/fstab  后执行mount -a(重新加载挂载信息)  此时可以查看是否挂载成功了
+    可重新验证是否开机自启动成功
+
+    
