@@ -89,7 +89,7 @@ set expandtab
 " 设置编辑时制表符占用空格数
 set tabstop=4
 " 设置格式化时制表符占用空格数
-set shiftwidth=4
+set shiftwidth=2
 " 让 vim 把连续数量的空格视为一个制表符
 set softtabstop=4
 " 随 vim 自启动
@@ -104,8 +104,8 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=darkgrey
 " 基于缩进或语法进行代码折叠
-"set foldmethod=indent
-set foldmethod=syntax
+set foldmethod=indent
+"set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable
 let g:SignatureMap = {
@@ -218,10 +218,10 @@ setlocal completefunc=javacomplete#CompleteParamsInfo
 inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P>
 inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
 autocmd Filetype java inoremap <buffer> . .<C-X><C-O><C-P>
-
-
-
-
+au FileType html,Python,vim,JavaScript setl shiftwidth=2
+au FileType html,python,vim,javascript setl tabstop=2
+au FileType php setl shiftwidth=4
+au FileType php setl tabstop=4
 
 colorscheme molokai 
 if has('gui_running')
@@ -229,3 +229,28 @@ if has('gui_running')
 else
     set background=light
 endif
+
+" taglist
+let Tlist_Auto_Highlight_Tag = 1
+let Tlist_Auto_Open = 1
+let Tlist_Auto_Update = 1
+let Tlist_Close_On_Select = 0
+let Tlist_Compact_Format = 0
+let Tlist_Display_Prototype = 0
+let Tlist_Display_Tag_Scope = 1
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Exit_OnlyWindow = 0
+let Tlist_File_Fold_Auto_Close = 0
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Hightlight_Tag_On_BufEnter = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_Max_Submenu_Items = 1
+let Tlist_Max_Tag_Length = 30
+let Tlist_Process_File_Always = 0
+let Tlist_Show_Menu = 0
+let Tlist_Show_One_File = 0
+let Tlist_Sort_Type = "order"
+let Tlist_Use_Horiz_Window = 0
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 40
+let tlist_php_settings = 'php;c:class;i:interfaces;d:constant;f:function'
